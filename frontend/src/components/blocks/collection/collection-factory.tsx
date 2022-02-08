@@ -90,7 +90,8 @@ export const collectionBlocks: { 'blocks': CollectionBlockType,
             'label': 'Control',
             'children': {
                 'motorDriver': {'label': 'MotorDriver'},
-                'teleoperator': {'label': 'Teleoperator'}
+                'teleoperator': {'label': 'Teleoperator'},
+                'keyboardTeleop': {'label': 'Keyboard Teleoperator'}
             }
         },
         'opencv': {
@@ -158,6 +159,8 @@ export function getCollectionBlock(name: string) {
             return import('./ros-sensors/Odometer.json');
         case 'processing.tensorflow.objectDetector':
             return import('./tensorflow/ObjectDetector.json');
+        case 'drivers.control.keyboardTeleop':
+            return import('./control/KeyboardTeleop.json');
         default:
             break;
     }
